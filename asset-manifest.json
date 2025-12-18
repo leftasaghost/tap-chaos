@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tap-chaos/static/css/main.8d7b6859.css",
-    "main.js": "/tap-chaos/static/js/main.80221359.js",
+    "main.css": "/tap-chaos/static/css/main.e4233484.css",
+    "main.js": "/tap-chaos/static/js/main.df1e4925.js",
     "static/js/453.9ba098f9.chunk.js": "/tap-chaos/static/js/453.9ba098f9.chunk.js",
     "index.html": "/tap-chaos/index.html",
-    "main.8d7b6859.css.map": "/tap-chaos/static/css/main.8d7b6859.css.map",
-    "main.80221359.js.map": "/tap-chaos/static/js/main.80221359.js.map",
+    "main.e4233484.css.map": "/tap-chaos/static/css/main.e4233484.css.map",
+    "main.df1e4925.js.map": "/tap-chaos/static/js/main.df1e4925.js.map",
     "453.9ba098f9.chunk.js.map": "/tap-chaos/static/js/453.9ba098f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d7b6859.css",
-    "static/js/main.80221359.js"
+    "static/css/main.e4233484.css",
+    "static/js/main.df1e4925.js"
   ]
 }

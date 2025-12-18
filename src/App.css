@@ -1,0 +1,261 @@
+/* App.css - Clean elite look, dynamic animation */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.6s ease;
+  user-select: none;
+}
+
+.dark {
+  background: #0d1117;
+  color: #c9d1d9;
+}
+
+.light {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.click-counter {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.dialogue {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 80%;
+  margin-bottom: 40px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.chaos-button {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid;
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.dark .chaos-button {
+  border-color: #fff;
+}
+
+.light .chaos-button {
+  border-color: #000;
+}
+
+.chaos-button:hover {
+  filter: brightness(1.15);
+  transform: scale(1.04);
+}
+
+/* Dynamic animation - duration controlled by inline style */
+@keyframes smoothImpact {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.particle {
+  position: absolute;
+  font-size: 60px;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
+  100% { opacity: 0; transform: translate(-50%, -50%) translateY(-200px) scale(1.2); }
+}
+
+.reset-button {
+  margin-top: 30px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-radius: 30px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.dark .reset-button {
+  border-color: #fff;
+}
+
+.light .reset-button {
+  border-color: #000;
+}
+
+.stress-container {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.stress-label-horizontal {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.vertical-meter {
+  width: 16px;
+  height: 300px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.vertical-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 8px;
+  transition: height 0.5s ease;
+}
+
+.stress-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer {
+  position: absolute;
+  bottom: 24px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .chaos-button { width: 200px; height: 200px; font-size: 30px; }
+  .dialogue { font-size: 26px; }
+  .vertical-meter { height: 240px; }
+  .stress-container { left: 16px; }
+}
+
+/* ... (keep all previous styles) */
+
+/* Button - Clean base */
+.chaos-button {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid;
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.dark .chaos-button {
+  border-color: #fff;
+}
+
+.light .chaos-button {
+  border-color: #000;
+}
+
+/* CLICK ANIMATION — Works on every single tap */
+.chaos-button.click-animation {
+  animation: smoothImpact 0.6s ease-out;
+}
+
+/* Smooth, powerful impact that always plays */
+@keyframes smoothImpact {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  70% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chaos-button:hover {
+  filter: brightness(1.15);
+  transform: scale(1.04);
+}
+
+/* ... (rest of CSS unchanged) */
